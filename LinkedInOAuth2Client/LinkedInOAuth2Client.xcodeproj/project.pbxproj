@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB3D4F9718AACA4800367480 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4F9618AACA4800367480 /* Foundation.framework */; };
+		CB3D4F9918AACA4800367480 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4F9818AACA4800367480 /* CoreGraphics.framework */; };
+		CB3D4F9B18AACA4800367480 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4F9A18AACA4800367480 /* UIKit.framework */; };
+		CB3D4FA118AACA4800367480 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB3D4F9F18AACA4800367480 /* InfoPlist.strings */; };
+		CB3D4FA318AACA4800367480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FA218AACA4800367480 /* main.m */; };
+		CB3D4FA718AACA4800367480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FA618AACA4800367480 /* AppDelegate.m */; };
+		CB3D4FAA18AACA4800367480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3D4FA818AACA4800367480 /* Main.storyboard */; };
+		CB3D4FAD18AACA4800367480 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FAC18AACA4800367480 /* ViewController.m */; };
+		CB3D4FAF18AACA4800367480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3D4FAE18AACA4800367480 /* Images.xcassets */; };
+		CB3D4FB618AACA4800367480 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4FB518AACA4800367480 /* XCTest.framework */; };
+		CB3D4FB718AACA4800367480 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4F9618AACA4800367480 /* Foundation.framework */; };
+		CB3D4FB818AACA4800367480 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4F9A18AACA4800367480 /* UIKit.framework */; };
+		CB3D4FC018AACA4800367480 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB3D4FBE18AACA4800367480 /* InfoPlist.strings */; };
+		CB3D4FC218AACA4800367480 /* LinkedInOAuth2ClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FC118AACA4800367480 /* LinkedInOAuth2ClientTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB3D4FB918AACA4800367480 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB3D4F8B18AACA4800367480 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB3D4F9218AACA4800367480;
+			remoteInfo = LinkedInOAuth2Client;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB3D4F9318AACA4800367480 /* LinkedInOAuth2Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkedInOAuth2Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB3D4F9618AACA4800367480 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CB3D4F9818AACA4800367480 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CB3D4F9A18AACA4800367480 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CB3D4F9E18AACA4800367480 /* LinkedInOAuth2Client-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LinkedInOAuth2Client-Info.plist"; sourceTree = "<group>"; };
+		CB3D4FA018AACA4800367480 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB3D4FA218AACA4800367480 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CB3D4FA418AACA4800367480 /* LinkedInOAuth2Client-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LinkedInOAuth2Client-Prefix.pch"; sourceTree = "<group>"; };
+		CB3D4FA518AACA4800367480 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CB3D4FA618AACA4800367480 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CB3D4FA918AACA4800367480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB3D4FAB18AACA4800367480 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CB3D4FAC18AACA4800367480 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CB3D4FAE18AACA4800367480 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CB3D4FB418AACA4800367480 /* LinkedInOAuth2ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinkedInOAuth2ClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB3D4FB518AACA4800367480 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CB3D4FBD18AACA4800367480 /* LinkedInOAuth2ClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LinkedInOAuth2ClientTests-Info.plist"; sourceTree = "<group>"; };
+		CB3D4FBF18AACA4800367480 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB3D4FC118AACA4800367480 /* LinkedInOAuth2ClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedInOAuth2ClientTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB3D4F9018AACA4800367480 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3D4F9918AACA4800367480 /* CoreGraphics.framework in Frameworks */,
+				CB3D4F9B18AACA4800367480 /* UIKit.framework in Frameworks */,
+				CB3D4F9718AACA4800367480 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB3D4FB118AACA4800367480 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3D4FB618AACA4800367480 /* XCTest.framework in Frameworks */,
+				CB3D4FB818AACA4800367480 /* UIKit.framework in Frameworks */,
+				CB3D4FB718AACA4800367480 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB3D4F8A18AACA4800367480 = {
+			isa = PBXGroup;
+			children = (
+				CB3D4F9C18AACA4800367480 /* LinkedInOAuth2Client */,
+				CB3D4FBB18AACA4800367480 /* LinkedInOAuth2ClientTests */,
+				CB3D4F9518AACA4800367480 /* Frameworks */,
+				CB3D4F9418AACA4800367480 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB3D4F9418AACA4800367480 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D4F9318AACA4800367480 /* LinkedInOAuth2Client.app */,
+				CB3D4FB418AACA4800367480 /* LinkedInOAuth2ClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB3D4F9518AACA4800367480 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D4F9618AACA4800367480 /* Foundation.framework */,
+				CB3D4F9818AACA4800367480 /* CoreGraphics.framework */,
+				CB3D4F9A18AACA4800367480 /* UIKit.framework */,
+				CB3D4FB518AACA4800367480 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB3D4F9C18AACA4800367480 /* LinkedInOAuth2Client */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D4FA518AACA4800367480 /* AppDelegate.h */,
+				CB3D4FA618AACA4800367480 /* AppDelegate.m */,
+				CB3D4FA818AACA4800367480 /* Main.storyboard */,
+				CB3D4FAB18AACA4800367480 /* ViewController.h */,
+				CB3D4FAC18AACA4800367480 /* ViewController.m */,
+				CB3D4FAE18AACA4800367480 /* Images.xcassets */,
+				CB3D4F9D18AACA4800367480 /* Supporting Files */,
+			);
+			path = LinkedInOAuth2Client;
+			sourceTree = "<group>";
+		};
+		CB3D4F9D18AACA4800367480 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D4F9E18AACA4800367480 /* LinkedInOAuth2Client-Info.plist */,
+				CB3D4F9F18AACA4800367480 /* InfoPlist.strings */,
+				CB3D4FA218AACA4800367480 /* main.m */,
+				CB3D4FA418AACA4800367480 /* LinkedInOAuth2Client-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB3D4FBB18AACA4800367480 /* LinkedInOAuth2ClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D4FC118AACA4800367480 /* LinkedInOAuth2ClientTests.m */,
+				CB3D4FBC18AACA4800367480 /* Supporting Files */,
+			);
+			path = LinkedInOAuth2ClientTests;
+			sourceTree = "<group>";
+		};
+		CB3D4FBC18AACA4800367480 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D4FBD18AACA4800367480 /* LinkedInOAuth2ClientTests-Info.plist */,
+				CB3D4FBE18AACA4800367480 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB3D4F9218AACA4800367480 /* LinkedInOAuth2Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB3D4FC518AACA4800367480 /* Build configuration list for PBXNativeTarget "LinkedInOAuth2Client" */;
+			buildPhases = (
+				CB3D4F8F18AACA4800367480 /* Sources */,
+				CB3D4F9018AACA4800367480 /* Frameworks */,
+				CB3D4F9118AACA4800367480 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LinkedInOAuth2Client;
+			productName = LinkedInOAuth2Client;
+			productReference = CB3D4F9318AACA4800367480 /* LinkedInOAuth2Client.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB3D4FB318AACA4800367480 /* LinkedInOAuth2ClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB3D4FC818AACA4800367480 /* Build configuration list for PBXNativeTarget "LinkedInOAuth2ClientTests" */;
+			buildPhases = (
+				CB3D4FB018AACA4800367480 /* Sources */,
+				CB3D4FB118AACA4800367480 /* Frameworks */,
+				CB3D4FB218AACA4800367480 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB3D4FBA18AACA4800367480 /* PBXTargetDependency */,
+			);
+			name = LinkedInOAuth2ClientTests;
+			productName = LinkedInOAuth2ClientTests;
+			productReference = CB3D4FB418AACA4800367480 /* LinkedInOAuth2ClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB3D4F8B18AACA4800367480 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Designed;
+				TargetAttributes = {
+					CB3D4FB318AACA4800367480 = {
+						TestTargetID = CB3D4F9218AACA4800367480;
+					};
+				};
+			};
+			buildConfigurationList = CB3D4F8E18AACA4800367480 /* Build configuration list for PBXProject "LinkedInOAuth2Client" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB3D4F8A18AACA4800367480;
+			productRefGroup = CB3D4F9418AACA4800367480 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB3D4F9218AACA4800367480 /* LinkedInOAuth2Client */,
+				CB3D4FB318AACA4800367480 /* LinkedInOAuth2ClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB3D4F9118AACA4800367480 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3D4FAF18AACA4800367480 /* Images.xcassets in Resources */,
+				CB3D4FA118AACA4800367480 /* InfoPlist.strings in Resources */,
+				CB3D4FAA18AACA4800367480 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB3D4FB218AACA4800367480 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3D4FC018AACA4800367480 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB3D4F8F18AACA4800367480 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3D4FAD18AACA4800367480 /* ViewController.m in Sources */,
+				CB3D4FA718AACA4800367480 /* AppDelegate.m in Sources */,
+				CB3D4FA318AACA4800367480 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB3D4FB018AACA4800367480 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3D4FC218AACA4800367480 /* LinkedInOAuth2ClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB3D4FBA18AACA4800367480 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB3D4F9218AACA4800367480 /* LinkedInOAuth2Client */;
+			targetProxy = CB3D4FB918AACA4800367480 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB3D4F9F18AACA4800367480 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB3D4FA018AACA4800367480 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CB3D4FA818AACA4800367480 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB3D4FA918AACA4800367480 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB3D4FBE18AACA4800367480 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB3D4FBF18AACA4800367480 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB3D4FC318AACA4800367480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CB3D4FC418AACA4800367480 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB3D4FC618AACA4800367480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LinkedInOAuth2Client/LinkedInOAuth2Client-Prefix.pch";
+				INFOPLIST_FILE = "LinkedInOAuth2Client/LinkedInOAuth2Client-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CB3D4FC718AACA4800367480 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LinkedInOAuth2Client/LinkedInOAuth2Client-Prefix.pch";
+				INFOPLIST_FILE = "LinkedInOAuth2Client/LinkedInOAuth2Client-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CB3D4FC918AACA4800367480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LinkedInOAuth2Client.app/LinkedInOAuth2Client";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LinkedInOAuth2Client/LinkedInOAuth2Client-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LinkedInOAuth2ClientTests/LinkedInOAuth2ClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CB3D4FCA18AACA4800367480 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LinkedInOAuth2Client.app/LinkedInOAuth2Client";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LinkedInOAuth2Client/LinkedInOAuth2Client-Prefix.pch";
+				INFOPLIST_FILE = "LinkedInOAuth2ClientTests/LinkedInOAuth2ClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB3D4F8E18AACA4800367480 /* Build configuration list for PBXProject "LinkedInOAuth2Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB3D4FC318AACA4800367480 /* Debug */,
+				CB3D4FC418AACA4800367480 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB3D4FC518AACA4800367480 /* Build configuration list for PBXNativeTarget "LinkedInOAuth2Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB3D4FC618AACA4800367480 /* Debug */,
+				CB3D4FC718AACA4800367480 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CB3D4FC818AACA4800367480 /* Build configuration list for PBXNativeTarget "LinkedInOAuth2ClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB3D4FC918AACA4800367480 /* Debug */,
+				CB3D4FCA18AACA4800367480 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB3D4F8B18AACA4800367480 /* Project object */;
+}
