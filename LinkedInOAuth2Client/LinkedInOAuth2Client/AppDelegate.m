@@ -7,8 +7,51 @@
 //
 
 #import "AppDelegate.h"
+#import "NXOAuth2.h"
+
+#define STATE_LENGTH 16
 
 @implementation AppDelegate
+
+// LinkedIn API documentation
+// http://developer.linkedin.com/documents/authentication
+
+static NSString * const OAuth2ClientID = @"API_KEY";
+static NSString * const OAuth2SecretKey = @"SECRET_KEY";
+
+NSString * const OAuth2AuthorizationURL = @"https://www.linkedin.com/uas/oauth2/authorization";
+NSString * const OAuth2TokenURL = @"https://www.linkedin.com/uas/oauth2/accessToken";
+NSString * const OAuth2RedirectURI = @"REDIRECT_URI";
+NSString * const OAuth2AccountType = @"LinkedIn";
+
+// Set your desirable response prefix
+NSString * const OAuth2SuccessPagePrefix = @"code=";
+NSString * const OAuth2ProfileURL = @"https://api.linkedin.com/v1/people/~?";
+
+static NSSet *OAuth2Scopes;
+
++ (void)initialize;
+{
+    if (self == [AppDelegate class]) {
+        OAuth2Scopes = [[NSSet alloc] initWithObjects:@"r_basicprofile", @"rw_nus", nil];
+    }
+    NSString *letters = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: STATE_LENGTH];
+    
+    for (int i = 0; i < STATE_LENGTH; i++) {
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random() % [letters length]]];
+    }
+    NSMutableString *OAuth2AuthorizationURLWithState = [[NSMutableString alloc] initWithString:OAuth2AuthorizationURL];
+    [OAuth2AuthorizationURLWithState appendFormat:@"?state=%@", randomString];
+    
+    [[NXOAuth2AccountStore sharedStore] setClientID:OAuth2ClientID
+                                             secret:OAuth2SecretKey
+                                              scope:OAuth2Scopes
+                                   authorizationURL:[NSURL URLWithString:OAuth2AuthorizationURLWithState]
+                                           tokenURL:[NSURL URLWithString:OAuth2TokenURL]
+                                        redirectURL:[NSURL URLWithString:OAuth2RedirectURI]
+                                     forAccountType:OAuth2AccountType];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

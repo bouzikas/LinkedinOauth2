@@ -14,13 +14,14 @@
 		CB3D4FA318AACA4800367480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FA218AACA4800367480 /* main.m */; };
 		CB3D4FA718AACA4800367480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FA618AACA4800367480 /* AppDelegate.m */; };
 		CB3D4FAA18AACA4800367480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3D4FA818AACA4800367480 /* Main.storyboard */; };
-		CB3D4FAD18AACA4800367480 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FAC18AACA4800367480 /* ViewController.m */; };
 		CB3D4FAF18AACA4800367480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3D4FAE18AACA4800367480 /* Images.xcassets */; };
 		CB3D4FB618AACA4800367480 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4FB518AACA4800367480 /* XCTest.framework */; };
 		CB3D4FB718AACA4800367480 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4F9618AACA4800367480 /* Foundation.framework */; };
 		CB3D4FB818AACA4800367480 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4F9A18AACA4800367480 /* UIKit.framework */; };
-		CB3D4FC018AACA4800367480 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB3D4FBE18AACA4800367480 /* InfoPlist.strings */; };
-		CB3D4FC218AACA4800367480 /* LinkedInOAuth2ClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FC118AACA4800367480 /* LinkedInOAuth2ClientTests.m */; };
+		CB3D4FD718AACCEA00367480 /* libOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4FD418AACC8600367480 /* libOAuth2Client.a */; };
+		CB3D4FD918AACDC700367480 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4FD818AACDC700367480 /* Security.framework */; };
+		CB3D4FE018AACFC600367480 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FDF18AACFC600367480 /* ProfileViewController.m */; };
+		CB3D4FE318AAD00000367480 /* OAuth2LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FE218AAD00000367480 /* OAuth2LoginView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = CB3D4F9218AACA4800367480;
 			remoteInfo = LinkedInOAuth2Client;
+		};
+		CB3D4FD118AACC8600367480 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB3D4FCC18AACC8500367480 /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 942FFCD612315E0A00E6C65E;
+			remoteInfo = OAuth2Client.framework;
+		};
+		CB3D4FD318AACC8600367480 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB3D4FCC18AACC8500367480 /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = OAuth2Client;
+		};
+		CB3D4FD518AACCDC00367480 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB3D4FCC18AACC8500367480 /* OAuth2Client.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = OAuth2Client;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -45,14 +67,15 @@
 		CB3D4FA518AACA4800367480 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CB3D4FA618AACA4800367480 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CB3D4FA918AACA4800367480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CB3D4FAB18AACA4800367480 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CB3D4FAC18AACA4800367480 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CB3D4FAE18AACA4800367480 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CB3D4FB418AACA4800367480 /* LinkedInOAuth2ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinkedInOAuth2ClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3D4FB518AACA4800367480 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		CB3D4FBD18AACA4800367480 /* LinkedInOAuth2ClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LinkedInOAuth2ClientTests-Info.plist"; sourceTree = "<group>"; };
-		CB3D4FBF18AACA4800367480 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CB3D4FC118AACA4800367480 /* LinkedInOAuth2ClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedInOAuth2ClientTests.m; sourceTree = "<group>"; };
+		CB3D4FCC18AACC8500367480 /* OAuth2Client.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuth2Client.xcodeproj; path = LinkedInOAuth2Client/OAuth2Client/OAuth2Client.xcodeproj; sourceTree = "<group>"; };
+		CB3D4FD818AACDC700367480 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CB3D4FDE18AACFC600367480 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Views/ProfileViewController.h; sourceTree = "<group>"; };
+		CB3D4FDF18AACFC600367480 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Views/ProfileViewController.m; sourceTree = "<group>"; };
+		CB3D4FE118AAD00000367480 /* OAuth2LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuth2LoginView.h; path = Views/OAuth2LoginView.h; sourceTree = "<group>"; };
+		CB3D4FE218AAD00000367480 /* OAuth2LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuth2LoginView.m; path = Views/OAuth2LoginView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB3D4FD918AACDC700367480 /* Security.framework in Frameworks */,
+				CB3D4FD718AACCEA00367480 /* libOAuth2Client.a in Frameworks */,
 				CB3D4F9918AACA4800367480 /* CoreGraphics.framework in Frameworks */,
 				CB3D4F9B18AACA4800367480 /* UIKit.framework in Frameworks */,
 				CB3D4F9718AACA4800367480 /* Foundation.framework in Frameworks */,
@@ -82,8 +107,8 @@
 		CB3D4F8A18AACA4800367480 = {
 			isa = PBXGroup;
 			children = (
+				CB3D4FCC18AACC8500367480 /* OAuth2Client.xcodeproj */,
 				CB3D4F9C18AACA4800367480 /* LinkedInOAuth2Client */,
-				CB3D4FBB18AACA4800367480 /* LinkedInOAuth2ClientTests */,
 				CB3D4F9518AACA4800367480 /* Frameworks */,
 				CB3D4F9418AACA4800367480 /* Products */,
 			);
@@ -101,6 +126,7 @@
 		CB3D4F9518AACA4800367480 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB3D4FD818AACDC700367480 /* Security.framework */,
 				CB3D4F9618AACA4800367480 /* Foundation.framework */,
 				CB3D4F9818AACA4800367480 /* CoreGraphics.framework */,
 				CB3D4F9A18AACA4800367480 /* UIKit.framework */,
@@ -115,9 +141,8 @@
 				CB3D4FA518AACA4800367480 /* AppDelegate.h */,
 				CB3D4FA618AACA4800367480 /* AppDelegate.m */,
 				CB3D4FA818AACA4800367480 /* Main.storyboard */,
-				CB3D4FAB18AACA4800367480 /* ViewController.h */,
-				CB3D4FAC18AACA4800367480 /* ViewController.m */,
 				CB3D4FAE18AACA4800367480 /* Images.xcassets */,
+				CB3D4FDA18AACEAF00367480 /* Views */,
 				CB3D4F9D18AACA4800367480 /* Supporting Files */,
 			);
 			path = LinkedInOAuth2Client;
@@ -134,22 +159,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CB3D4FBB18AACA4800367480 /* LinkedInOAuth2ClientTests */ = {
+		CB3D4FCD18AACC8500367480 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB3D4FC118AACA4800367480 /* LinkedInOAuth2ClientTests.m */,
-				CB3D4FBC18AACA4800367480 /* Supporting Files */,
+				CB3D4FD218AACC8600367480 /* OAuth2Client.framework */,
+				CB3D4FD418AACC8600367480 /* libOAuth2Client.a */,
 			);
-			path = LinkedInOAuth2ClientTests;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		CB3D4FBC18AACA4800367480 /* Supporting Files */ = {
+		CB3D4FDA18AACEAF00367480 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CB3D4FBD18AACA4800367480 /* LinkedInOAuth2ClientTests-Info.plist */,
-				CB3D4FBE18AACA4800367480 /* InfoPlist.strings */,
+				CB3D4FDE18AACFC600367480 /* ProfileViewController.h */,
+				CB3D4FDF18AACFC600367480 /* ProfileViewController.m */,
+				CB3D4FE118AAD00000367480 /* OAuth2LoginView.h */,
+				CB3D4FE218AAD00000367480 /* OAuth2LoginView.m */,
 			);
-			name = "Supporting Files";
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +193,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CB3D4FD618AACCDC00367480 /* PBXTargetDependency */,
 			);
 			name = LinkedInOAuth2Client;
 			productName = LinkedInOAuth2Client;
@@ -215,6 +243,12 @@
 			mainGroup = CB3D4F8A18AACA4800367480;
 			productRefGroup = CB3D4F9418AACA4800367480 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CB3D4FCD18AACC8500367480 /* Products */;
+					ProjectRef = CB3D4FCC18AACC8500367480 /* OAuth2Client.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CB3D4F9218AACA4800367480 /* LinkedInOAuth2Client */,
@@ -222,6 +256,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CB3D4FD218AACC8600367480 /* OAuth2Client.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2Client.framework;
+			remoteRef = CB3D4FD118AACC8600367480 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB3D4FD418AACC8600367480 /* libOAuth2Client.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOAuth2Client.a;
+			remoteRef = CB3D4FD318AACC8600367480 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CB3D4F9118AACA4800367480 /* Resources */ = {
@@ -238,7 +289,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB3D4FC018AACA4800367480 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB3D4FAD18AACA4800367480 /* ViewController.m in Sources */,
 				CB3D4FA718AACA4800367480 /* AppDelegate.m in Sources */,
+				CB3D4FE018AACFC600367480 /* ProfileViewController.m in Sources */,
 				CB3D4FA318AACA4800367480 /* main.m in Sources */,
+				CB3D4FE318AAD00000367480 /* OAuth2LoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB3D4FC218AACA4800367480 /* LinkedInOAuth2ClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +320,11 @@
 			isa = PBXTargetDependency;
 			target = CB3D4F9218AACA4800367480 /* LinkedInOAuth2Client */;
 			targetProxy = CB3D4FB918AACA4800367480 /* PBXContainerItemProxy */;
+		};
+		CB3D4FD618AACCDC00367480 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OAuth2Client;
+			targetProxy = CB3D4FD518AACCDC00367480 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -288,14 +343,6 @@
 				CB3D4FA918AACA4800367480 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CB3D4FBE18AACA4800367480 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB3D4FBF18AACA4800367480 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -380,7 +427,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LinkedInOAuth2Client/LinkedInOAuth2Client-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/LinkedInOAuth2Client/OAuth2Client/**",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "LinkedInOAuth2Client/LinkedInOAuth2Client-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -393,7 +447,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LinkedInOAuth2Client/LinkedInOAuth2Client-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/LinkedInOAuth2Client/OAuth2Client/**",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "LinkedInOAuth2Client/LinkedInOAuth2Client-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -460,6 +521,7 @@
 				CB3D4FC718AACA4800367480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB3D4FC818AACA4800367480 /* Build configuration list for PBXNativeTarget "LinkedInOAuth2ClientTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +530,7 @@
 				CB3D4FCA18AACA4800367480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -315,9 +315,9 @@ NSString * const NXOAuth2ClientConnectionContextTokenRefresh = @"tokenRefresh";
     
     [tokenRequest setHTTPMethod:@"POST"];
     [authConnection cancel];  // just to be sure
-
+    
     self.authenticating = YES;
-
+    
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                        @"authorization_code", @"grant_type",
                                        clientId, @"client_id",
