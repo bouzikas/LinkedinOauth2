@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LinkedinOAuth2.h"
 
 @interface OAuth2LoginView : UIViewController <UIWebViewDelegate>
 
-- (void)requestProtectedData;
-
+@property (nonatomic, retain) LinkedinOAuth2 *linkedinOauth2;
 @property (weak, nonatomic) IBOutlet UITextField *addressBar;
 @property (weak, nonatomic) IBOutlet UIWebView *loginWebView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadIndicator;

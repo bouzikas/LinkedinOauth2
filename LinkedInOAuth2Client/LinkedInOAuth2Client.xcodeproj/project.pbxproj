@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB2FC69E18AD877A00FE6F1B /* LinkedinOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2FC69D18AD877A00FE6F1B /* LinkedinOAuth2.m */; };
 		CB3D4F9718AACA4800367480 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4F9618AACA4800367480 /* Foundation.framework */; };
 		CB3D4F9918AACA4800367480 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4F9818AACA4800367480 /* CoreGraphics.framework */; };
 		CB3D4F9B18AACA4800367480 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4F9A18AACA4800367480 /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB2FC69C18AD877A00FE6F1B /* LinkedinOAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinkedinOAuth2.h; path = Classes/LinkedinOAuth2.h; sourceTree = "<group>"; };
+		CB2FC69D18AD877A00FE6F1B /* LinkedinOAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinkedinOAuth2.m; path = Classes/LinkedinOAuth2.m; sourceTree = "<group>"; };
 		CB3D4F9318AACA4800367480 /* LinkedInOAuth2Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkedInOAuth2Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3D4F9618AACA4800367480 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB3D4F9818AACA4800367480 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB2FC69A18AD874900FE6F1B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CB2FC69C18AD877A00FE6F1B /* LinkedinOAuth2.h */,
+				CB2FC69D18AD877A00FE6F1B /* LinkedinOAuth2.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		CB3D4F8A18AACA4800367480 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +154,7 @@
 				CB3D4FA618AACA4800367480 /* AppDelegate.m */,
 				CB3D4FA818AACA4800367480 /* Main.storyboard */,
 				CB3D4FAE18AACA4800367480 /* Images.xcassets */,
+				CB2FC69A18AD874900FE6F1B /* Classes */,
 				CB3D4FDA18AACEAF00367480 /* Views */,
 				CB3D4F9D18AACA4800367480 /* Supporting Files */,
 			);
@@ -299,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2FC69E18AD877A00FE6F1B /* LinkedinOAuth2.m in Sources */,
 				CB3D4FA718AACA4800367480 /* AppDelegate.m in Sources */,
 				CB3D4FE018AACFC600367480 /* ProfileViewController.m in Sources */,
 				CB3D4FA318AACA4800367480 /* main.m in Sources */,

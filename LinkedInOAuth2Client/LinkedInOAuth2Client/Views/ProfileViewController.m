@@ -7,17 +7,16 @@
 //
 
 #import "ProfileViewController.h"
-#import "AppDelegate.h"
-#import "NXOAuth2.h"
 
 @interface ProfileViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation ProfileViewController{
+    BOOL hasLogout;
+}
 
 @synthesize oAuth2LoginView;
-
 
 #pragma mark - View Lifecycle
 
@@ -34,6 +33,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    hasLogout = NO;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(profileDataRetrieved:)
+                                                 name:@"profileDataRetrieved"
+                                               object:oAuth2LoginView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +57,10 @@
                                                  name:@"loginViewDidFinish"
                                                object:oAuth2LoginView];
     
-    [self performSegueWithIdentifier:@"openLinkedinSegue" sender:sender];
+    if (hasLogout) {
+        [self performSegueWithIdentifier:@"openLinkedinSegue" sender:sender];
+        hasLogout = NO;
+    }
 }
 
 #pragma mark - Dismissing Delegate Methods
@@ -60,9 +69,6 @@ static BOOL loggedIn = NO;
 
 - (void)dismissAndLoginView {
     [self dismissViewControllerAnimated:NO completion:nil];
-    
-    if (!loggedIn)
-        return;
     
     // Change button's text
     [self.loginButton setTitle:@"Logout" forState:UIControlStateNormal];
@@ -75,9 +81,8 @@ static BOOL loggedIn = NO;
 }
 
 - (IBAction)logoutAction:(id)sender{
-    for (NXOAuth2Account *account in [[NXOAuth2AccountStore sharedStore] accounts]) {
-        [[NXOAuth2AccountStore sharedStore] removeAccount:account];
-    }
+    LinkedinOAuth2 *linkedinOauth2 = [[LinkedinOAuth2 alloc] init];
+    [linkedinOauth2 clearAccounts];
     
     // Change button's text
     [self.loginButton setTitle:@"Login using LinkedIn" forState:UIControlStateNormal];
@@ -92,9 +97,19 @@ static BOOL loggedIn = NO;
     self.nameLabel.text = @"Name: ";
     self.surnameLabel.text = @"Surname: ";
     self.jobLabel.text = @"Job: ";
+    
+    hasLogout = YES;
 }
 
 -(void) loginViewDidFinish:(NSNotification*)notification {
+    loggedIn = YES;
+    
+    LinkedinOAuth2 *linkedinOauth2 = [[LinkedinOAuth2 alloc] init];
+    [linkedinOauth2 requestProtectedData];
+}
+
+-(void) profileDataRetrieved:(NSNotification*)notification {
+
     NSData *xmlProfile = [[notification userInfo] objectForKey:@"response"];
     
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlProfile];
@@ -102,6 +117,7 @@ static BOOL loggedIn = NO;
     [parser parse];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     [self dismissAndLoginView];
 }
 
