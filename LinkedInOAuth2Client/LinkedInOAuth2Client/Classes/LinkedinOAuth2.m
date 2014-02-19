@@ -17,12 +17,12 @@
 // LinkedIn API documentation
 // http://developer.linkedin.com/documents/authentication
 
-static NSString * const OAuth2ClientID = @"API_KEY";
-static NSString * const OAuth2SecretKey = @"SECRET_KEY";
+static NSString * const OAuth2ClientID = @"77c5jaok9p3qhh";
+static NSString * const OAuth2SecretKey = @"fcfYAMwtkTx8kmtx";
 
 NSString * const OAuth2AuthorizationURL = @"https://www.linkedin.com/uas/oauth2/authorization";
 NSString * const OAuth2TokenURL = @"https://www.linkedin.com/uas/oauth2/accessToken";
-NSString * const OAuth2RedirectURI = @"REDIRECT_URI";
+NSString * const OAuth2RedirectURI = @"http://mixxer.gr/linkedin/accept";
 NSString * const OAuth2AccountType = @"LinkedIn";
 
 // Set your desirable response prefix
@@ -30,14 +30,14 @@ NSString * const OAuth2SuccessPagePrefix = @"code=";
 NSString * const OAuth2ProfileURL = @"https://api.linkedin.com/v1/people/~";
 
 static NSSet *OAuth2Scopes;
-static NSString * const defaultFields = @"first-name,last-name,headline";
+static NSString * const defaultFields = @"first-name,last-name,location:(name),picture-url,email-address,headline";
 static NSMutableArray *ProfileFields = nil;
 
 #pragma mark - Constructor
 
 - (BOOL)accountInit;
 {
-    if(ProfileFields == nil) ProfileFields = [NSMutableArray arrayWithObjects:@"first-name", @"last-name", @"email-address", @"headline",@"picture-url", nil];
+    if(ProfileFields == nil) ProfileFields = [NSMutableArray arrayWithObjects:@"first-name", @"last-name", @"location:(name)", @"picture-url", @"email-address", @"headline", nil];
     
     if ([[[NXOAuth2AccountStore sharedStore] accounts] count] > 0){
         return NO;
@@ -170,6 +170,25 @@ static NSMutableArray *ProfileFields = nil;
     }
     
     return cleared;
+}
+
+- (BOOL)userAuthenticated{
+    
+    if ([[[NXOAuth2AccountStore sharedStore] accounts] count] > 0){
+        NSDate *dateNow = [NSDate date];
+        
+        NSArray *accounts = [[NXOAuth2AccountStore sharedStore] accountsWithAccountType:OAuth2AccountType];
+        NSDate *tokenExpDate = [[accounts[0] accessToken] expiresAt];
+        
+        if ([tokenExpDate compare:dateNow] == NSOrderedDescending) {
+            NSLog(@"Token isn't expired yet [%@]", tokenExpDate.description);
+            return YES;
+        }
+        // Clear accounts, cause token is expired.
+        [self clearAccounts];
+    }
+    
+    return NO;
 }
 
 @end

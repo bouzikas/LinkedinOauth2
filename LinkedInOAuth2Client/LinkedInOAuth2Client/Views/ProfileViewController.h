@@ -7,24 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OAuth2LoginView.h"
+#import "Profile.h"
 
-@protocol OAuth2LoginViewProtocol <NSObject>
+@interface ProfileViewController : UIViewController
 
-- (void)dismissAndLoginView;
-
-@end
-
-
-@interface ProfileViewController : UIViewController <NSXMLParserDelegate>
-
-- (IBAction)logoutAction:(id)sender;
-
-@property (nonatomic, weak) id <OAuth2LoginViewProtocol> delegate;
-@property (nonatomic, retain) OAuth2LoginView *oAuth2LoginView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *surnameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *jobLabel;
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (nonatomic, strong) Profile *userProfile;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePhoto;
+@property (weak, nonatomic) IBOutlet UILabel *fullname;
+@property (weak, nonatomic) IBOutlet UILabel *location;
+@property (weak, nonatomic) IBOutlet UILabel *jobPosition;
 
 @end

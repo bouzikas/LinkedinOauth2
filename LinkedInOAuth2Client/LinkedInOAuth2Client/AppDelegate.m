@@ -7,13 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "LinkedinOAuth2.h"
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    LinkedinOAuth2 *oauth2 = [[LinkedinOAuth2 alloc] init];
+    self.authenticated = [oauth2 userAuthenticated];
+    
     return YES;
 }
 							

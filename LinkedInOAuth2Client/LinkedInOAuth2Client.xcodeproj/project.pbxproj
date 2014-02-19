@@ -23,6 +23,9 @@
 		CB3D4FD918AACDC700367480 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3D4FD818AACDC700367480 /* Security.framework */; };
 		CB3D4FE018AACFC600367480 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FDF18AACFC600367480 /* ProfileViewController.m */; };
 		CB3D4FE318AAD00000367480 /* OAuth2LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D4FE218AAD00000367480 /* OAuth2LoginView.m */; };
+		CBA0100A18B42ABE009AC8AD /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA0100918B42ABE009AC8AD /* BViewController.m */; };
+		CBA0100E18B42F27009AC8AD /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA0100D18B42F27009AC8AD /* XMLParser.m */; };
+		CBA0101118B4307B009AC8AD /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA0101018B4307B009AC8AD /* Profile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,12 @@
 		CB3D4FDF18AACFC600367480 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Views/ProfileViewController.m; sourceTree = "<group>"; };
 		CB3D4FE118AAD00000367480 /* OAuth2LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuth2LoginView.h; path = Views/OAuth2LoginView.h; sourceTree = "<group>"; };
 		CB3D4FE218AAD00000367480 /* OAuth2LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuth2LoginView.m; path = Views/OAuth2LoginView.m; sourceTree = "<group>"; };
+		CBA0100818B42ABE009AC8AD /* BViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BViewController.h; path = Views/BViewController.h; sourceTree = "<group>"; };
+		CBA0100918B42ABE009AC8AD /* BViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BViewController.m; path = Views/BViewController.m; sourceTree = "<group>"; };
+		CBA0100C18B42F27009AC8AD /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLParser.h; path = Classes/XMLParser.h; sourceTree = "<group>"; };
+		CBA0100D18B42F27009AC8AD /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLParser.m; path = Classes/XMLParser.m; sourceTree = "<group>"; };
+		CBA0100F18B4307B009AC8AD /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Profile.h; path = Classes/Profile.h; sourceTree = "<group>"; };
+		CBA0101018B4307B009AC8AD /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Profile.m; path = Classes/Profile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +121,10 @@
 			children = (
 				CB2FC69C18AD877A00FE6F1B /* LinkedinOAuth2.h */,
 				CB2FC69D18AD877A00FE6F1B /* LinkedinOAuth2.m */,
+				CBA0100C18B42F27009AC8AD /* XMLParser.h */,
+				CBA0100D18B42F27009AC8AD /* XMLParser.m */,
+				CBA0100F18B4307B009AC8AD /* Profile.h */,
+				CBA0101018B4307B009AC8AD /* Profile.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -184,10 +197,12 @@
 		CB3D4FDA18AACEAF00367480 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CB3D4FDE18AACFC600367480 /* ProfileViewController.h */,
-				CB3D4FDF18AACFC600367480 /* ProfileViewController.m */,
+				CBA0100818B42ABE009AC8AD /* BViewController.h */,
+				CBA0100918B42ABE009AC8AD /* BViewController.m */,
 				CB3D4FE118AAD00000367480 /* OAuth2LoginView.h */,
 				CB3D4FE218AAD00000367480 /* OAuth2LoginView.m */,
+				CB3D4FDE18AACFC600367480 /* ProfileViewController.h */,
+				CB3D4FDF18AACFC600367480 /* ProfileViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -312,9 +327,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA0100E18B42F27009AC8AD /* XMLParser.m in Sources */,
 				CB2FC69E18AD877A00FE6F1B /* LinkedinOAuth2.m in Sources */,
+				CBA0100A18B42ABE009AC8AD /* BViewController.m in Sources */,
 				CB3D4FA718AACA4800367480 /* AppDelegate.m in Sources */,
 				CB3D4FE018AACFC600367480 /* ProfileViewController.m in Sources */,
+				CBA0101118B4307B009AC8AD /* Profile.m in Sources */,
 				CB3D4FA318AACA4800367480 /* main.m in Sources */,
 				CB3D4FE318AAD00000367480 /* OAuth2LoginView.m in Sources */,
 			);

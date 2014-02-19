@@ -23,5 +23,6 @@ extern NSString * const OAuth2ProfileURL;
 - (void)handleAuthResponse:(NSString *)authResponse;
 - (void)requestProtectedData;
 - (BOOL)clearAccounts;
+- (BOOL)userAuthenticated;
 
 @end

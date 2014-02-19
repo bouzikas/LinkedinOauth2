@@ -7,16 +7,22 @@
 //
 
 #import "ProfileViewController.h"
+#import "LinkedinOAuth2.h"
+#import "AppDelegate.h"
+#import "BViewController.h"
+#import "XMLParser.h"
 
 @interface ProfileViewController ()
+@property (nonatomic, strong) NSOperationQueue *queue;
 
 @end
 
-@implementation ProfileViewController{
-    BOOL hasLogout;
-}
+@implementation ProfileViewController
 
-@synthesize oAuth2LoginView;
+@synthesize profilePhoto;
+@synthesize fullname;
+@synthesize location;
+@synthesize jobPosition;
 
 #pragma mark - View Lifecycle
 
@@ -33,13 +39,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    hasLogout = NO;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(profileDataRetrieved:)
-                                                 name:@"profileDataRetrieved"
-                                               object:oAuth2LoginView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,115 +47,114 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Action & Retrieve Methods
-
-- (IBAction)loginBtnPressed:(id)sender {
-    // register to be told when the login is finished
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(loginViewDidFinish:)
-                                                 name:@"loginViewDidFinish"
-                                               object:oAuth2LoginView];
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-    if (hasLogout) {
-        [self performSegueWithIdentifier:@"openLinkedinSegue" sender:sender];
-        hasLogout = NO;
+    
+    if(![(AppDelegate*)[[UIApplication sharedApplication] delegate] authenticated]) {
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        BViewController *initView =  (BViewController*)[storyboard instantiateViewControllerWithIdentifier:@"initialView"];
+        [initView setModalPresentationStyle:UIModalPresentationFullScreen];
+        [self presentViewController:initView animated:NO completion:nil];
+    } else{
+    
+        LinkedinOAuth2 *oauth2 = [[LinkedinOAuth2 alloc] init];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(profileDataRetrieved:)
+                                                     name:@"profileDataRetrieved"
+                                                   object:oauth2];
+        [oauth2 requestProtectedData];
     }
 }
 
-#pragma mark - Dismissing Delegate Methods
-
-static BOOL loggedIn = NO;
-
-- (void)dismissAndLoginView {
-    [self dismissViewControllerAnimated:NO completion:nil];
-    
-    // Change button's text
-    [self.loginButton setTitle:@"Logout" forState:UIControlStateNormal];
-    
-    // Remove existing login via linkedin action
-    [self.loginButton removeTarget:nil action:@selector(loginBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
-    
-    // Add logout action
-    [self.loginButton addTarget:self action:@selector(logoutAction:) forControlEvents:UIControlEventTouchUpInside];
-}
-
-- (IBAction)logoutAction:(id)sender{
-    LinkedinOAuth2 *linkedinOauth2 = [[LinkedinOAuth2 alloc] init];
-    [linkedinOauth2 clearAccounts];
-    
-    // Change button's text
-    [self.loginButton setTitle:@"Login using LinkedIn" forState:UIControlStateNormal];
-    
-    // Remove existing logout action
-    [self.loginButton removeTarget:self action:@selector(logoutAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    // Add login via linkedin action
-    [self.loginButton addTarget:self action:@selector(loginBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
-    
-    // Clear profile labels
-    self.nameLabel.text = @"Name: ";
-    self.surnameLabel.text = @"Surname: ";
-    self.jobLabel.text = @"Job: ";
-    
-    hasLogout = YES;
-}
-
--(void) loginViewDidFinish:(NSNotification*)notification {
-    loggedIn = YES;
-    
-    LinkedinOAuth2 *linkedinOauth2 = [[LinkedinOAuth2 alloc] init];
-    [linkedinOauth2 requestProtectedData];
+- (void)handleError:(NSError *)error
+{
+    NSString *errorMessage = [error localizedDescription];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Cannot Load Profile photo"
+														message:errorMessage
+													   delegate:nil
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+    [alertView show];
 }
 
 -(void) profileDataRetrieved:(NSNotification*)notification {
-
+    
+    self.queue = [[NSOperationQueue alloc] init];
+    
     NSData *xmlProfile = [[notification userInfo] objectForKey:@"response"];
     
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlProfile];
-    [parser setDelegate:self];
-    [parser parse];
+    XMLParser *parser = [[XMLParser alloc] initWithData:xmlProfile];
+    
+    parser.errorHandler = ^(NSError *parseError) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self handleError:parseError];
+        });
+    };
+    
+    __weak XMLParser *weakParser = parser;
+    
+    parser.completionBlock = ^(void) {
+        if (weakParser.workingEntry != nil) {
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                self.userProfile = weakParser.workingEntry;
+                [self loadData];
+            });
+        }
+        
+        // we are finished with the queue and our ParseOperation
+        self.queue = nil;
+    };
+    
+    [self.queue addOperation:parser];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
-    [self dismissAndLoginView];
 }
 
-#pragma mark - XML Parsing
-
-static NSString *tagName = nil;
-static NSString * const firstName;
-static NSString * const lastName;
-static NSString * const jobPosition;
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict
-{
-    if([elementName isEqualToString:@"error"]){
-        return;
-    }
+- (void)loadData{
+    NSMutableString *fullName = [[NSMutableString alloc] initWithString:self.userProfile.name];
+    [fullName appendFormat:@" %@",self.userProfile.surname];
     
-    loggedIn = YES;
-    tagName = elementName;
+    fullname.text = fullName;
+    jobPosition.text = self.userProfile.jobPosition;
+    location.text = self.userProfile.location;
+    
+    [self downloadImage:[NSURL URLWithString:self.userProfile.imageURLString]];
 }
 
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
-    NSLog(@"Ending of Element: [%@]", elementName);
-    if([elementName isEqualToString:@"person"]){
-        NSLog(@"Ending of Root Element");
-    }
+- (IBAction)logout:(id)sender {
+    LinkedinOAuth2 *oauth2 = [[LinkedinOAuth2 alloc] init];
+    [oauth2 clearAccounts];
+    
+    AppDelegate *authObj = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    authObj.authenticated = [oauth2 userAuthenticated];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    BViewController *initView =  (BViewController*)[storyboard instantiateViewControllerWithIdentifier:@"initialView"];
+    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
+    [self presentViewController:initView animated:YES completion:nil];
 }
 
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+#pragma mark - Profile image request
+
+- (void)downloadImage:(NSURL *)url {
     
-    if([tagName isEqualToString:@"first-name"]) {
-        self.nameLabel.text = [self.nameLabel.text stringByAppendingString:string];
-    } else if([tagName isEqualToString:@"last-name"]) {
-        self.surnameLabel.text = [self.surnameLabel.text stringByAppendingString:string];
-    } else if([tagName isEqualToString:@"headline"]) {
-        self.jobLabel.text = [self.jobLabel.text stringByAppendingString:string];
-    }
-    
-    tagName = nil;
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               if ( !error ) {
+                                   self.profilePhoto.image = [[UIImage alloc] initWithData:data];
+                               } else {
+                                   NSLog(@"%@", error);
+                               }
+                           }];
 }
 
 @end
