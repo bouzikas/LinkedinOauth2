@@ -17,12 +17,12 @@
 // LinkedIn API documentation
 // http://developer.linkedin.com/documents/authentication
 
-static NSString * const OAuth2ClientID = @"77c5jaok9p3qhh";
-static NSString * const OAuth2SecretKey = @"fcfYAMwtkTx8kmtx";
+static NSString * const OAuth2ClientID = @"API_KEY";
+static NSString * const OAuth2SecretKey = @"SECRET_KEY";
 
 NSString * const OAuth2AuthorizationURL = @"https://www.linkedin.com/uas/oauth2/authorization";
 NSString * const OAuth2TokenURL = @"https://www.linkedin.com/uas/oauth2/accessToken";
-NSString * const OAuth2RedirectURI = @"http://mixxer.gr/linkedin/accept";
+NSString * const OAuth2RedirectURI = @"REDIRECT_URI";
 NSString * const OAuth2AccountType = @"LinkedIn";
 
 // Set your desirable response prefix
